@@ -1,0 +1,28 @@
+
+### Get ALL Pessoa
+GET http://localhost:4000/pessoas
+
+### Get By Id Pessoa
+GET http://localhost:4000/pessoas/2
+
+
+### Get By Documento pessoas
+GET http://localhost:4000/pessoas/doc/000.000.000-00
+
+### UPDATE pessoa
+PUT http://localhost:4000/pessoas/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nome": "pessoa3 Update",
+  "documento": "000.000.000-03",
+  "rua": "rua teste update",
+  "numero": "06",
+  "complemento": "teste complemento update",
+  "cidade_id": "4780",
+  "tipo_sanguineo_id": 7
+}
+
+### DELETE By Documento pessoas
+DELETE http://localhost:4000/pessoas/7

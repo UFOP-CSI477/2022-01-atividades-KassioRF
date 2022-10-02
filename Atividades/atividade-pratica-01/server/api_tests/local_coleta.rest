@@ -1,0 +1,26 @@
+
+
+### Get ALL localColeta
+GET http://localhost:4000/localColeta
+
+### Get By Id Local Coleta
+GET http://localhost:4000/localColeta/1
+
+
+### UPDATE Local Coleta
+PUT http://localhost:4000/localColeta/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nome": "Local02 Update",
+  "rua": "rua teste update",
+  "numero": "06",
+  "complemento": "teste complemento update",
+  "cidade_id": "4780",
+  "tipo_sanguineo_id": 7
+}
+
+
+### DELETE By Id Local Coleta
+DELETE http://localhost:4000/localColeta/2

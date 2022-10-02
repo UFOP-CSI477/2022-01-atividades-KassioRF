@@ -1,0 +1,21 @@
+export interface EnderecoModel {
+  rua: string;
+  numero: string;
+  complemento: string;
+  cidade_id: number;
+}
+
+export interface EstadoModel {
+  id?: number;
+  nome: string;
+  sigla: string;
+  created_at?: string;
+}
+
+export interface CidadeModel {
+  id?: number;
+  nome: string;
+  estado_id: number;
+  estado: EstadoModel;
+  created_at?: string;
+}

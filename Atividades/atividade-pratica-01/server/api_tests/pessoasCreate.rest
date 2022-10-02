@@ -1,0 +1,80 @@
+
+### Ipatinga: 5070
+### JM: 5127
+### Itabira: 5077
+### BH: 4780
+### Create Pessoa
+POST http://localhost:4000/pessoas
+Content-Type: application/json
+
+{
+  "nome": "pessoa0",
+  "documento": "000.000.000-00",
+  "rua": "rua teste",
+  "numero": "00",
+  "complemento": "teste complemento",
+  "cidade_id": "5070",
+
+  "tipo_sanguineo_id": 2
+}
+
+###
+POST http://localhost:4000/pessoas
+Content-Type: application/json
+
+{
+  "nome": "pessoa1",
+  "documento": "000.000.000-01",
+  "rua": "rua teste",
+  "numero": "01",
+  "complemento": "teste complemento",
+  "cidade_id": "5127",
+
+  "tipo_sanguineo_id": 3
+}
+
+
+###
+POST http://localhost:4000/pessoas
+Content-Type: application/json
+
+{
+  "nome": "pessoa2",
+  "documento": "000.000.000-02",
+  "rua": "rua teste",
+  "numero": "02",
+  "complemento": "teste complemento",
+  "cidade_id": "5077",
+
+  "tipo_sanguineo_id": 4
+}
+
+###
+POST http://localhost:4000/pessoas
+Content-Type: application/json
+
+{
+  "nome": "pessoa3",
+  "documento": "000.000.000-03",
+  "rua": "rua teste",
+  "numero": "03",
+  "complemento": "teste complemento",
+  "cidade_id": "4780",
+
+  "tipo_sanguineo_id": 5
+}
+
+###
+POST http://localhost:4000/pessoas
+Content-Type: application/json
+
+{
+  "nome": "pessoa4",
+  "documento": "000.000.000-04",
+  "rua": "rua teste",
+  "numero": "03",
+  "complemento": "teste complemento",
+  "cidade_id": "4780",
+
+  "tipo_sanguineo_id": 6
+}

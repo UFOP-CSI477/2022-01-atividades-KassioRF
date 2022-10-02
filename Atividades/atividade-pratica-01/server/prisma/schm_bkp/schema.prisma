@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./app-doacao.sqlite"
+}
+
+
+model TipoSanguineo {
+  id         Int      @id @default(autoincrement())
+  tipo       String
+  fator      String
+
+  pessoa Pessoa[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("tiposSanguineos")
+
+}
+
+
+model Pessoa {
+  id                Int      @id @default(autoincrement())
+  nome              String
+  documento         String
+
+  rua               String
+  numero            String
+  complemento       String
+  cidade            String
+  estado            String
+
+
+  tipo_sanguineo_id Int
+  tipo TipoSanguineo @relation(fields: [tipo_sanguineo_id], references: [id])
+
+  doacao Doacao[]
+
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())
+
+  @@map("pessoas")
+
+
+}
+
+model LocalColeta {
+  id                Int      @id @default(autoincrement())
+  nome              String
+
+  rua               String
+  numero            String
+  complemento       String
+  cidade            String
+  estado            String  
+
+  doacao Doacao[]
+  
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+
+  @@map("locaisColeta")
+
+}
+
+
+model Doacao {
+  id                Int      @id @default(autoincrement())
+  data              DateTime
+
+  pessoa_id         Int
+  local_id          Int
+
+  pessoa Pessoa @relation(fields: [pessoa_id], references: [id])
+  local  LocalColeta @relation(fields: [local_id], references: [id])
+
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+
+  @@map("doacoes")
+}
+

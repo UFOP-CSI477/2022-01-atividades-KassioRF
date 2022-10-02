@@ -1,0 +1,11 @@
+### GET ALL Estados
+GET http://localhost:4000/estados/
+
+### GET By Id Estados
+GET http://localhost:4000/estados/2
+
+### GET ALL Cidades
+GET http://localhost:4000/cidades/
+
+### GET By Id Cidades
+GET http://localhost:4000/cidades/5070

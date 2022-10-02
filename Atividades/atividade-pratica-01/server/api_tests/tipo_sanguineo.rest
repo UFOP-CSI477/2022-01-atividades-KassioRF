@@ -1,0 +1,2 @@
+### GET ALL Tipo Sanguineo
+GET http://localhost:4000/tipoSanguineo/

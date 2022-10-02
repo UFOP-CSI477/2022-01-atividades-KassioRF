@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./app-doacao.sqlite?connection_limit=1&connect_timeout=30"
+  
+}
+
+
+model TipoSanguineo {
+  id         Int      @id @default(autoincrement())
+  tipo       String
+  fator      String
+
+  pessoa Pessoa[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+
+  @@map("tiposSanguineos")
+
+}
+
+
+model Pessoa {
+  id                Int      @id @default(autoincrement())
+  nome              String
+  documento         String
+
+  endereco_id       Int
+  endereco          Endereco @relation(fields: [endereco_id], references: [id])
+
+  tipo_sanguineo_id Int
+  tipo TipoSanguineo @relation(fields: [tipo_sanguineo_id], references: [id])
+
+  doacao Doacao[]
+
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())
+
+  @@map("pessoas")
+
+
+}
+
+model LocalColeta {
+  id                Int      @id @default(autoincrement())
+  nome              String
+  doacao            Doacao[]
+
+  endereco_id       Int
+  endereco          Endereco @relation(fields: [endereco_id], references: [id])
+  
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+
+  @@map("locaisColeta")
+
+}
+
+
+model Doacao {
+  id                Int      @id @default(autoincrement())
+  data              DateTime
+
+  pessoa_id         Int
+  local_id          Int
+
+  pessoa            Pessoa @relation(fields: [pessoa_id], references: [id])
+  local             LocalColeta @relation(fields: [local_id], references: [id])
+
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+
+  @@map("doacoes")
+}
+
+model Endereco {
+  id                Int      @id @default(autoincrement())
+  rua               String
+  numero            String
+  complemento       String
+  cidade_id         Int
+
+  cidade            Cidade @relation(fields: [cidade_id], references: [id])
+
+
+  localColeta       LocalColeta[]
+  pessoa            Pessoa[]
+
+}
+
+
+
+model Estado {
+  id                Int      @id @default(autoincrement())
+  nome              String
+  sigla             String
+  created_at        DateTime @default(now())
+  cidade            Cidade[]
+  @@map("estados")
+
+}
+
+model Cidade {
+  id                Int    @id @default(autoincrement())
+  nome              String
+  estado_id         Int
+  estado            Estado @relation(fields: [estado_id], references: [id])
+  created_at        DateTime @default(now())
+ 
+  endereco          Endereco[]
+  
+  @@map("cidades")
+
+}
