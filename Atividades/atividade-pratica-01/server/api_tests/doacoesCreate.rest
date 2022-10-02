@@ -1,0 +1,41 @@
+### PESSOA ID: 8, 9, 10, 11, 12
+###LOCAIS ID: 1, 3, 4
+
+### Create Local Coleta
+POST http://localhost:4000/doacao
+Content-Type: application/json
+
+{
+  "pessoa_id": 8,
+  "local_id": 1,
+  "date": "29/09/2022"
+}
+### Create Local Coleta
+POST http://localhost:4000/doacao
+Content-Type: application/json
+
+{
+  "pessoa_id": 9,
+  "local_id": 1,
+  "date": "29/09/2022"
+}
+
+
+### Create Local Coleta
+POST http://localhost:4000/doacao
+Content-Type: application/json
+
+{
+  "pessoa_id": 10,
+  "local_id": 3,
+  "date": "29/09/2022"
+}
+### Create Local Coleta
+POST http://localhost:4000/doacao
+Content-Type: application/json
+
+{
+  "pessoa_id": 11,
+  "local_id": 4,
+  "date": "29/09/2022"
+}

@@ -67,7 +67,7 @@ model LocalColeta {
 
 model Doacao {
   id                Int      @id @default(autoincrement())
-  data              DateTime
+  date              DateTime
 
   pessoa_id         Int
   local_id          Int

@@ -1,0 +1,1 @@
+{"version":3,"file":"GetAllTipoSanguineo.js","sourceRoot":"","sources":["../../../../src/controller/tiposSanguineos/GetAllTipoSanguineo.ts"],"names":[],"mappings":";;;AACA,kDAAqD;AAErD,MAAa,mBAAmB;IAC9B,KAAK,CAAC,MAAM,CAAE,GAAY,EAAE,GAAa;QACvC,MAAM,gBAAgB,GAAG,MAAM,qBAAY,CAAC,aAAa,CAAC,QAAQ,EAAE,CAAC;QACrE,OAAO,GAAG,CAAC,IAAI,CAAC,gBAAgB,CAAC,CAAA;IACnC,CAAC;CACF;AALD,kDAKC"}

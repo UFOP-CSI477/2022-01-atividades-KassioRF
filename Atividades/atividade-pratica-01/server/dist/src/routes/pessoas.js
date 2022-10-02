@@ -1,0 +1,25 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.pessoasRouter = void 0;
+const express_1 = require("express");
+const CreatePessoa_1 = require("../controller/pessoas/CreatePessoa");
+const DeletePessoa_1 = require("../controller/pessoas/DeletePessoa");
+const GetAllPessoa_1 = require("../controller/pessoas/GetAllPessoa");
+const GetByDocumentoPessoa_1 = require("../controller/pessoas/GetByDocumentoPessoa");
+const GetByIdPessoa_1 = require("../controller/pessoas/GetByIdPessoa");
+const UpdatePessoa_1 = require("../controller/pessoas/UpdatePessoa");
+const pessoasRouter = (0, express_1.Router)();
+exports.pessoasRouter = pessoasRouter;
+const createPessoa = new CreatePessoa_1.CreatePessoa();
+const getAllPessoa = new GetAllPessoa_1.GetAllPessoa();
+const getByIdPessoa = new GetByIdPessoa_1.GetByIdPessoa();
+const getByDocumentoPessoa = new GetByDocumentoPessoa_1.GetByDocumentoPessoa();
+const updatePessoa = new UpdatePessoa_1.UpdatePessoa();
+const deletePessoa = new DeletePessoa_1.DeletePessoa();
+pessoasRouter.post('/pessoas', createPessoa.handle);
+pessoasRouter.get('/pessoas', getAllPessoa.handle);
+pessoasRouter.get('/pessoas/:id', getByIdPessoa.handle);
+pessoasRouter.get('/pessoas/doc/:documento', getByDocumentoPessoa.handle);
+pessoasRouter.put('/pessoas/:id', updatePessoa.handle);
+pessoasRouter.delete('/pessoas/:id', deletePessoa.handle);
+//# sourceMappingURL=pessoas.js.map

@@ -1,0 +1,21 @@
+
+### Get ALL localColeta
+GET http://localhost:4000/doacao
+
+### Get By Id Local Coleta
+GET http://localhost:4000/doacao/1
+
+### UPDATE Local Coleta
+PUT http://localhost:4000/doacao/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "pessoa_id": 8,
+  "local_id": 1,
+  "date": "20/09/2022"
+}
+
+
+### DELETE By Id Local Coleta
+DELETE http://localhost:4000/doacao/4
