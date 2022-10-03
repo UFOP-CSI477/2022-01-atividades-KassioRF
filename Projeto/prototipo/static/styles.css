@@ -1,0 +1,176 @@
+/* Variables */
+:root {
+  /* Default Colors*/
+  --white: #fff;
+  --whiteText: #eee;
+  --whitePopUp: #fafafa;
+  --whiteBackground: #f9f9f9;
+  --black: #404040;
+  --darkBlack: #262626;
+  --red: #7e1b2f;
+  --redBtn: #a8243e;
+  --redLight: #d22d4e;
+  --redBorder: rgb(168, 36, 62, 0.5);
+
+  --greenIcons: #27ae60;
+  --blueIcons: #2980b9;
+  --yellowIcons:#f39c12;
+  /* Default Font's*/
+  --mainFont: 'Montserrat', sans-serif;
+  --titleFont: 'Exo 2', sans-serif;
+
+  /* Default box-shadow*/
+  --boxShadow_btn: 2px 2px 2px rgb(127 137 161 / 30%)
+}
+
+body{
+  font-family: var(--mainFont);
+}
+
+
+
+/* --- Navbar --- */
+#nav-logo {
+  font-size: 5vh;
+  color: var(--white);
+}
+
+.navbar {
+  min-height: 10vh;
+  
+}
+.nav-link {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+
+.navbar-collapse {
+  justify-content: inherit;
+  padding-left: 10vh;
+}
+
+.nav-bar-float-right-content {
+  color: var(--white);
+  
+}
+.nav-bar-float-right-content > span {
+  padding:  0 1rem;
+}
+
+
+.ul-nav-rigth-content {
+  align-items: center;
+}
+
+.login-dropdown-content {
+  left: -3rem !important;
+}
+
+.shopping-cart {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.user-icon {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+
+/* --- Carrousel Home ---- */
+
+.carousel-item > img {
+  /* width: 50vh; */
+  height: 40vh;
+}
+
+
+#carrousel {
+  margin-bottom: 10vh;
+}
+.slider-content {
+  padding: 0 10rem;
+}
+
+.row-flex-center {
+  text-align: center;
+}
+
+.row-justify-center {
+  justify-content: center;
+}
+
+.features-list {
+  justify-content: center;
+}
+
+.title, .sub-section-title {
+  margin: 6vh;
+}
+
+.card-img-top {
+  padding: 2rem;
+}
+
+
+
+/* ---- Book page Info ---- */
+
+.book-page-table-info {
+  font-size: 14px;
+}
+
+.card-book-info {
+  height: 100%;
+  padding:3rem 4rem 0rem 0rem;
+}
+
+.card-book-info > p {
+  text-align: justify;
+}
+
+.book-page-image {
+  padding: 3rem;
+  width: 45vh;
+}
+
+
+/* --- Register page info --- */
+
+
+
+/* --- Profile page ---- */
+
+#profile-section {
+  margin-bottom: 5vh;
+}
+
+.profile-nav {
+  padding-top: 5vh;
+
+}
+.profile-nav > ul > li  {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  /* box-shadow: 0px 0px 10px rgb(127 137 161 / 40%); */
+
+}
+
+.profile-sub-section {
+  padding-left: 10vh;
+}
+
+.profile-sub-section-title {
+  margin: 2rem 0;
+}
+
+.profile-user-section {
+  padding-left: 5vh;
+}
+/* ---- Footer ---- */
+
+footer { 
+  height: 10vh;
+  margin-top: 10vh !important;
+}
