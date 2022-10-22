@@ -22,7 +22,16 @@ export class GetAllDoacao {
         local: {
           select: {
             id: true,
-            nome: true,            
+            nome: true,
+            endereco: {
+              select: {
+                cidade: {
+                  select: {
+                    nome: true
+                  }
+                }
+              }
+            }            
           }
         }
         

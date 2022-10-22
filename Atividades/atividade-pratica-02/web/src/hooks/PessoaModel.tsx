@@ -7,7 +7,7 @@ export interface PessoaModel {
   id?: number;
   nome: string;
   endereco: EnderecoModel;
-  document: string;
+  documento: string;
   tipo: TipoSanguineoModel;
   created_at?: string,
   updated_at?: string;

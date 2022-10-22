@@ -13,6 +13,10 @@ export class CreateLocalColeta {
 
     } = req.body;
 
+    console.log('\n-------------------');
+    console.log(cidade_id);
+    console.log(parseInt(cidade_id));
+    console.log('\n-------------------');
     try {
       const endereco = await prismaClient.endereco.create({
         data: {

@@ -30,7 +30,8 @@ export class GetByIdLocalColeta {
             }
           }
         },
-
+        created_at: true,
+        updated_at: true
       }
     });
 
