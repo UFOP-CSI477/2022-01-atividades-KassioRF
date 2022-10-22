@@ -8,6 +8,10 @@ import CreatePessoa from "./components/pessoas/CreatePessoa";
 import ShowPessoa from "./components/pessoas/ShowPessoa";
 import ShowLocalColeta from "./components/locais_coleta/ShowLocalColeta";
 import CreateLocalColeta from "./components/locais_coleta/CreateLocalColeta";
+import ShowDoacao from "./components/doacoes/ShowDoacao";
+import CreateDoacao from "./components/doacoes/CreateDoacao";
+import EditPessoa from "./components/pessoas/EditPessoa";
+import EditLocalColeta from "./components/locais_coleta/EditLocalColeta";
 
 
 const AppRoutes = () => {
@@ -17,12 +21,19 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={ <App /> } />
         <Route path="/doacoes" element={ <Doacoes /> } />
+        <Route path="/doacoes/:id" element={ <ShowDoacao /> } />
+        <Route path="/doacoes/cadastrar" element={ <CreateDoacao /> } />
+        
         <Route path="/locais_coleta" element={ <LocaisColeta /> } />
         <Route path="/locais_coleta/cadastrar" element={ <CreateLocalColeta /> } />
         <Route path="/locais_coleta/:id" element={ <ShowLocalColeta /> } />
+        <Route path="/locais_coleta/atualizar/:id" element={ <EditLocalColeta /> } />
+        
+
         <Route path="/pessoas" element={ <Pessoas /> } />
         <Route path="/pessoas/cadastrar" element= {<CreatePessoa />} />
-        <Route path="/pessoas/:id" element={<ShowPessoa />} />             
+        <Route path="/pessoas/:id" element={<ShowPessoa />} />       
+        <Route path="/pessoas/atualizar/:id" element={<EditPessoa />} />
       </Routes>      
     </BrowserRouter>
   );

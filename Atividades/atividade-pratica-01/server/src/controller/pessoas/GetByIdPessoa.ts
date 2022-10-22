@@ -15,6 +15,7 @@ export class GetByIdPessoa {
         documento: true,        
         tipo: {
           select: {
+            id: true,
             tipo: true,
             fator: true,
           }
@@ -26,9 +27,12 @@ export class GetByIdPessoa {
             complemento: true,
             cidade: {
               select: {
+                id: true,
                 nome: true,
+                
                 estado: {
                   select: {
+                    id: true,
                     sigla: true
                   }
                   

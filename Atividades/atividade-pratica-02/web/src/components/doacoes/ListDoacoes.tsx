@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { DoacaoModel } from '../../hooks/DoacaoModel';
 import api from '../../services/api';
@@ -36,11 +37,37 @@ const ListDoacoes = () => {
         <> {_error.msg}</> : 
         
         // Se tudo está ok exibe os dados carregados
-        <ul>
-          { doacoes.map(item => (
-            <li key={item.id}>{item.id} | {item.pessoa.nome} | {item.pessoa.tipo.tipo} {item.pessoa.tipo.fator} | {item.local.nome} - {item.local.endereco.cidade.nome}  </li>
-          ))}
-        </ul>                                  
+        // <ul>
+        //   { doacoes.map(item => (
+        //     <li key={item.id}>{item.id} | {item.pessoa.nome} | {item.pessoa.tipo.tipo} {item.pessoa.tipo.fator} | {item.local.nome} - {item.local.endereco.cidade.nome}  </li>
+        //   ))}
+        // </ul>                                  
+        doacoes.length == 0 ?
+        <p> Não possui registros ainda </p> :
+
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Id</th>            
+              <th>tipo sang.</th>
+              <th>[id] Pessoa</th>
+              <th>[id] local</th>
+              <th>ver</th>
+            </tr>
+          </thead>
+          <tbody>
+            {doacoes.map(item => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.pessoa?.tipo.tipo}{item.pessoa?.tipo.fator}</td>
+                <td>[{item.pessoa?.id}] {item.pessoa?.nome}</td>
+                <td>[{item.local?.id}] {item.local?.nome} - {item.local?.endereco.cidade.nome} - {item.local?.endereco.cidade.estado.sigla}</td>
+                <td><Link to={`/doacoes/${item.id}`} > ver </Link></td>
+              </tr>
+            ))}
+          </tbody>
+        
+        </Table>
 
         }
     </>

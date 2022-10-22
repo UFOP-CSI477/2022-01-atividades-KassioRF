@@ -40,10 +40,12 @@ const ListLocaisColeta = () => {
           <> Sem dados carregados </> :        
           <Table responsive>
             <thead>
-              <th>Id</th>
-              <th>Nome</th>
-              <th>Cidade</th>
-              <th> </th>
+              <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Cidade</th>
+                <th> </th>
+              </tr>
             </thead>
             <tbody>
               {locaisColeta.map(item => (

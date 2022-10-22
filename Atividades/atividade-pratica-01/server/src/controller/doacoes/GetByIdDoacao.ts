@@ -27,10 +27,25 @@ export class GetByIdDoacao {
         local: {
           select: {
             id: true,
-            nome: true,            
+            nome: true,
+            endereco: {
+              select: {
+                cidade: {
+                  select: {
+                    nome: true,
+                    estado: {
+                      select: {
+                        sigla: true
+                      }
+                    }
+                  }
+                }
+              }
+            }            
           }
-        }
-        
+        },
+        created_at: true,
+        updated_at: true
       }
         
     });

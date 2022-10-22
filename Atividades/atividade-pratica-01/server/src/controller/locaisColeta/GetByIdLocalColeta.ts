@@ -19,9 +19,12 @@ export class GetByIdLocalColeta {
             complemento: true,
             cidade: {
               select: {
+                id: true,
                 nome: true,
+
                 estado: {
                   select: {
+                    id: true,
                     sigla: true
                   }
                   

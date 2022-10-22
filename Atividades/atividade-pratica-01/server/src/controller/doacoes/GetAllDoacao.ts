@@ -27,7 +27,13 @@ export class GetAllDoacao {
               select: {
                 cidade: {
                   select: {
-                    nome: true
+                    nome: true,
+                    estado: {
+                      select: {
+                        sigla: true
+                      }
+                    }
+                                        
                   }
                 }
               }

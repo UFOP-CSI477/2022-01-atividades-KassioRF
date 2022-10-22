@@ -80,7 +80,7 @@ const ShowLocalColeta = () => {
           </Button>              
         </Col>        
         <Col md="auto">
-          <Button variant="warning" onClick={(_) => navigate('/locais_coleta')}>
+          <Button variant="warning" onClick={(_) => navigate(`/locais_coleta/atualizar/${id}`)}>
             Atualizar
           </Button>        
         </Col>        

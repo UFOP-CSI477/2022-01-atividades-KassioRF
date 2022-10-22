@@ -16,6 +16,7 @@ type FormEnderecoProps = {
   complemento: string;
   estados: EstadoModel[];
   cidadeId: number;
+  estadoSelected?: number;
 
   setRua: React.Dispatch<React.SetStateAction<any>>;
   setNumero: React.Dispatch<React.SetStateAction<any>>;
@@ -26,19 +27,42 @@ type FormEnderecoProps = {
 
 const FormGroupEndereco = (props: FormEnderecoProps) => {
   
+  const [estadoId, setEstadoId] = useState(0);
   const [ cidades, setCidades ] = useState<CidadeModel[]>([]);
+  const [firstLoad, setFirstLoad] = useState(true);
   // Preenche o select das cidades
-  const fillCidades = (estadoId: number | undefined) => {
-    if (estadoId) {
-      const _cidades = props.estados.find(estado => estado.id == estadoId)?.cidade;
+  useEffect(() => {
+    if (props.estadoSelected) {
+      //setEstadoId(props.estadoSelected);
+      props.setCidadeId(props.cidadeId);
+      if (firstLoad){
+        fillCidades(props.estadoSelected);
+        setFirstLoad(false);
+      }
+
+    }
+
+  },)
+
+  const fillCidades = (_estadoId: number | undefined) => {
+    console.log(_estadoId)
+    if (_estadoId) {
+      setEstadoId(_estadoId);
+      const _cidades = props.estados.find(estado => estado.id == _estadoId)?.cidade;
       if (_cidades) {
         setCidades(_cidades);
       }
     } else {
       setCidades([]);
     }
-
+    
   }
+  const updateSelect = () => {
+    fillCidades(estadoId);
+  }
+
+  // console.log(props.estadoSelected);
+  // console.log(props.cidadeId);
 
   return (
     <>
@@ -83,10 +107,18 @@ const FormGroupEndereco = (props: FormEnderecoProps) => {
           <Form.Select
             required  
             onChange={e => fillCidades(parseInt(e.target.value))}>
-            <option value="">selecione</option>
+            {!props.estadoSelected ? <option value="">selecione</option>
+            : <option key={props.estadoSelected} value={props.estadoSelected}>
+              { props.estados.find(e => e.id == props.estadoSelected)?.sigla }
+            </option>
+            }
             { props.estados.map(item => (
-              <option key={item.id} value={item.id}> {item.sigla} </option>
-            ))}
+              props.estadoSelected != item.id ?  
+                <option key={item.id} value={item.id}> {item.sigla} </option>
+              :
+              null
+            ))}            
+
 
           </Form.Select>
         </Form.Group>
@@ -95,15 +127,45 @@ const FormGroupEndereco = (props: FormEnderecoProps) => {
           <Form.Label>Cidade</Form.Label>
           <Form.Select 
             required
+            onClick= {e => updateSelect()}
             onChange={e => props.setCidadeId(parseInt(e.target.value))} >
 
-            <option value="">selecione</option>
-            { cidades.length == 0 ?
+            {estadoId  == 0 ?                      
+              <option value="">selecione</option>
+
+            : 
+                        
+            <option key={props.cidadeId} value={props.cidadeId}>
+              {/* { cidades.find(e => e.id == props.cidadeId)?.nome } */}
+              { props.estados.find( estado => estado.id == estadoId )
+              ?.cidade.find(_cid => _cid.id == props.cidadeId)?.nome }
+            </option>
+            
+            }
+
+            {
+                !props.estadoSelected && cidades.length == 0 ?                      
+                <option value="">...</option>
+
+                :
+                cidades.map(item => (
+                  props.cidadeId != item.id ?
+                  <option key={item.id} value={item.id}> {item.nome} </option>
+                :
+                  null
+                ))
+
+            }
+  
+            {/* { cidades.length == 0 ?
               <option>...</option> :                
               cidades.map(item => (
-                <option key={item.id} value={item.id}> {item.nome} </option>
+                props.cidadeId != item.id ?
+                  <option key={item.id} value={item.id}> {item.nome} </option>
+                :
+                  null
               ))              
-            }
+            } */}
             
           </Form.Select>
         </Form.Group>          

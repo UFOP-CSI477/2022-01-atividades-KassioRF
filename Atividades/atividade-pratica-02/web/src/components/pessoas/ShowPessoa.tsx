@@ -97,7 +97,7 @@ const ShowPessoa = () => {
           </Button>              
         </Col>        
         <Col md="auto">
-          <Button variant="warning" onClick={(_) => navigate('/pessoas')}>
+          <Button variant="warning" onClick={(_) => navigate(`/pessoas/atualizar/${pessoa?.id}`)}>
             Atualizar
           </Button>        
         </Col>        

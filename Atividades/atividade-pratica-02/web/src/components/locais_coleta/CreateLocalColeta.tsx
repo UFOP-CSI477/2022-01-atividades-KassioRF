@@ -60,7 +60,7 @@ const CreateLocalColeta = () => {
     <div>
       <Form onSubmit={handleCreateLocalColeta}>
         <Row className="mb-3">
-        <Form.Group as={Col} controlId="firsName">
+          <Form.Group as={Col} controlId="firsName">
             <Form.Label>Nome</Form.Label>
             <Form.Control 
               name="nome" 

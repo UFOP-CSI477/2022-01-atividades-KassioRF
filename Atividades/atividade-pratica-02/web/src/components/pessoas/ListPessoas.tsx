@@ -39,11 +39,7 @@ const ListPessoas = () => {
         // Se tudo está ok exibe os dados carregados
         pessoas.length == 0 ?
           <> Sem dados carregados </> :        
-          // <ul>
-          //   { pessoas.map(item => (
-          //     <li key={item.id}>{item.id} | {item.nome} | {item.documento} |  {item.endereco.cidade.nome} {item.endereco.cidade.estado.sigla}  </li>
-          //   ))}
-          // </ul>
+
           <Table responsive>
             <thead>
               <tr>
