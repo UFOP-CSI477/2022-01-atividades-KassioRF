@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import FormGroupEndereco from "../widgets/FormEndereco";
 import { CidadeModel, EstadoModel } from '../../hooks/EnderecoModel';
 import { TipoSanguineoModel } from '../../hooks/TipoSanguineoModel';
+import { _Center } from "../globalStyles";
 
 const EditPessoa = () => {
   
@@ -100,7 +101,7 @@ const EditPessoa = () => {
   }
 
   return (
-    <>
+    <_Center>
       {loading ? 
       <_Spinner /> :       
       
@@ -203,19 +204,29 @@ const EditPessoa = () => {
           setCidadeId={setCidadeId}
           estadoSelected={pessoa.endereco.cidade.estado.id}  
         />              
-        <Button variant="primary" onClick={(_) => navigate('/pessoas')}>
-          Voltar
-        </Button>
-        { loading ?
-          <_Spinner /> :
-          <Button variant="primary" type="submit">
-            Cadastrar
-          </Button>
-        }
 
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>            
+            <Button variant="primary" onClick={(_) => navigate('/pessoas')}>
+              Voltar
+            </Button>
+          </Col>
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Cadastrar
+              </Button>
+            }
+          </Col>
+        </Row> 
+
+
+      
+      
       </Form>
       }
-    </>
+    </_Center>
     
     
   );

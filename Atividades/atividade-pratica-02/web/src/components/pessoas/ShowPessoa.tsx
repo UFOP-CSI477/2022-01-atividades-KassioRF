@@ -5,13 +5,14 @@ import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
+import { _Center } from "../globalStyles";
 
 const ShowPessoa = () => {
-  const [ pessoa, setPessoa] = useState<PessoaModel>();
-
+  
   const navigate = useNavigate();
   const { id } = useParams();
-
+  
+  const [ pessoa, setPessoa] = useState<PessoaModel>();
   useEffect(() => {
     api.get(`/pessoas/${id}`)
       .then(response => {
@@ -41,9 +42,9 @@ const ShowPessoa = () => {
   }
 
   return (
-    <>
-      <h4> Show pessoa </h4>
-      <Table>
+    <_Center>
+      <h4> Pessoa - detalhes: </h4>
+      <Table bordered>
         <tbody>
           <tr>
             <th>Id:</th>
@@ -109,7 +110,7 @@ const ShowPessoa = () => {
       
       </Row>
 
-    </>
+    </_Center>
   );
 }
 

@@ -1,23 +1,26 @@
 import ListDistribuicao from "./ListDistribuicao";
-import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import { useNavigate} from "react-router-dom";
+import { _Center } from "../globalStyles";
+import { Button, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Distribuicao = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <_Center>
       <div>
-        <h3>Distribuicao:</h3>
-      <Link to="/distribuicoes/cadastrar"> Cadastrar </Link>
-      <ListDistribuicao />
+        <h3>Distribuição:</h3>
       </div>
-      <Button variant="primary" onClick={(_) => navigate('/')}>
-        Voltar
-      </Button>                
-    </>
-
-
+      <div>
+        <Link to="/distribuicoes/cadastrar"> Cadastrar </Link>
+        <ListDistribuicao />
+      </div>
+      <Col md={3}>
+        <Button variant="secondary" onClick={(_) => navigate('/')}>
+          Voltar
+        </Button>
+      </Col>
+    </_Center>
   );
 }
 

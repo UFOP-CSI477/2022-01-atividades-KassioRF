@@ -5,10 +5,10 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
 import _Spinner from '../utils/spinner';
 import { PessoaModel } from "../../hooks/PessoaModel";
 import { LocalColetaModel } from "../../hooks/LocalColetaModel";
+import { _Center } from "../globalStyles";
 //import FormGroupEndereco from "../widgets/FormEndereco";
 
 // select auto complete
@@ -93,11 +93,10 @@ const CreateDoacao = () => {
 
 
   return (
-    <>
-      <p>Create doacao</p>
-      
+    <_Center>
+      <h5>Cadastrar Doação</h5>      
       <Form onSubmit={handleCreateDoacao}>
-        <Col md={6}>
+        <Col>
         <Form.Label>Doador:</Form.Label>
           <Select 
             isClearable={true}
@@ -106,7 +105,7 @@ const CreateDoacao = () => {
             onChange={e => e ? setPessoaId(parseInt(e?.value)) : setPessoaId(0)} 
           />        
         </Col>
-        <Col md={6}>
+        <Col>
         <Form.Label>Local de coleta:</Form.Label>
           <Select
             isClearable={true}
@@ -116,7 +115,7 @@ const CreateDoacao = () => {
           />
         </Col>
         
-        <Col md={6}>
+        <Col>
           <Form.Label>Data da doação:</Form.Label>
           <div></div>
           <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={`pt-br`}>
@@ -131,20 +130,25 @@ const CreateDoacao = () => {
           </LocalizationProvider>        
         </Col>
 
-
-
-        <Button variant="primary" onClick={(_) => navigate('/doacoes')}>
-            Voltar
-          </Button>
-          { loading ?
-            <_Spinner /> :
-            <Button variant="primary" type="submit">
-              Cadastrar
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>
+            <Button variant="primary" onClick={(_) => navigate('/doacoes')}>
+              Voltar
             </Button>
-          }
+
+          </Col>
+
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Cadastrar
+              </Button>
+            }                    
+          </Col>
+        </Row>      
       </Form> 
-        
-    </>
+    </_Center>
   );
 
 }

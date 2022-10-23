@@ -10,7 +10,7 @@ import _Spinner from '../utils/spinner';
 import { UnidadeModel } from "../../hooks/UnidadeModel";
 import { ProdutoModel } from "../../hooks/ProdutoModel";
 import { formatDate } from "../utils/formatDate";
-
+import { _Center } from "../globalStyles";
 // select auto complete
 import Select, { GroupBase } from 'react-select'
 
@@ -93,11 +93,11 @@ const CreateDistribuicao = () => {
 
 
   return (
-    <>
+    <_Center>
       <p>Create distribuicao</p>
       
       <Form onSubmit={handleCreateDistribuicao}>
-        <Col md={6}>
+        <Col>
         <Form.Label>Unidade:</Form.Label>
           <Select 
             isClearable={true}
@@ -106,7 +106,7 @@ const CreateDistribuicao = () => {
             onChange={e => e ? setUnidadeId(parseInt(e?.value)) : setUnidadeId(0)} 
           />        
         </Col>
-        <Col md={6}>
+        <Col>
         <Form.Label>Produto:</Form.Label>
           <Select
             isClearable={true}
@@ -116,7 +116,7 @@ const CreateDistribuicao = () => {
           />
         </Col>
         
-        <Col md={6}>
+        <Col>
           <Form.Label>Data:</Form.Label>
           <div></div>
           <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={`pt-br`}>
@@ -131,20 +131,24 @@ const CreateDistribuicao = () => {
           </LocalizationProvider>        
         </Col>
 
-
-
-        <Button variant="primary" onClick={(_) => navigate('/distribuicoes')}>
-            Voltar
-          </Button>
-          { loading ?
-            <_Spinner /> :
-            <Button variant="primary" type="submit">
-              Cadastrar
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>
+            <Button variant="primary" onClick={(_) => navigate('/distribuicoes')}>
+              Voltar
             </Button>
-          }
-      </Form> 
-        
-    </>
+          </Col>
+
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Cadastrar
+              </Button>
+            }
+          </Col>
+        </Row>  
+      </Form>         
+    </_Center>
   );
 
 }

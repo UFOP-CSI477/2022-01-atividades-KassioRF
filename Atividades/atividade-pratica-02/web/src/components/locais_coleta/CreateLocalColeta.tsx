@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
 import _Spinner from '../utils/spinner';
 import FormGroupEndereco from "../widgets/FormEndereco";
+import { _Center } from "../globalStyles";
 
 const CreateLocalColeta = () => {
   const navigate = useNavigate();
@@ -57,7 +58,8 @@ const CreateLocalColeta = () => {
   }
 
   return (
-    <div>
+    <_Center>
+      <h5>Cadastrar Local de Coleta</h5>
       <Form onSubmit={handleCreateLocalColeta}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="firsName">
@@ -84,20 +86,26 @@ const CreateLocalColeta = () => {
           setCidadeId={setCidadeId}  
         />  
 
-        <Button variant="primary" onClick={(_) => navigate('/locais_coleta')}>
-          Voltar
-        </Button>
-        { loading ?
-          <_Spinner /> :
-          <Button variant="primary" type="submit">
-            Cadastrar
-          </Button>
-        }
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>
+            <Button variant="primary" onClick={(_) => navigate('/locais_coleta')}>
+              Voltar
+            </Button>
+          </Col>
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Cadastrar
+              </Button>
+            }            
+          </Col>
+        </Row>
 
       </Form>
   
   
-    </div>
+    </_Center>
   );  
   
 }

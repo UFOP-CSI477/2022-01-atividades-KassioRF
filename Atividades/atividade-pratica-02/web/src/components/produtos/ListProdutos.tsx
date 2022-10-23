@@ -40,7 +40,7 @@ const ListProdutos = () => {
         produtos.length == 0 ?
         <p> Não possui registros ainda </p> :
 
-        <Table responsive>
+        <Table responsive bordered>
           <thead>
             <tr>
               <th>Id</th>            

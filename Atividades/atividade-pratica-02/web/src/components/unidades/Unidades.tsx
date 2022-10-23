@@ -1,25 +1,27 @@
 
-import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import { useNavigate} from "react-router-dom";
 import ListUnidades from "./ListUnidades";
-// import ListProdutos from "./ListProdutos";
+import { useNavigate} from "react-router-dom";
+import { _Center } from "../globalStyles";
+import { Button, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Unidades = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <_Center>
       <div>
-        <h3>Produtos </h3>
+        <h3> Unidades: </h3>
+      </div>
+      <div>
       <Link to="/unidades/cadastrar"> Cadastrar </Link>
       <ListUnidades />
       </div>
-      <Button variant="primary" onClick={(_) => navigate('/')}>
-        Voltar
-      </Button>                
-    </>
-
-
+      <Col md={3}>
+        <Button variant="secondary" onClick={(_) => navigate('/')}>
+          Voltar
+        </Button>                      
+      </Col>
+    </_Center>      
   );
 }
 

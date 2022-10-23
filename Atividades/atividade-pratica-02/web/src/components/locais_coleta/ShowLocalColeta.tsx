@@ -5,7 +5,7 @@ import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
 import { LocalColetaModel } from '../../hooks/LocalColetaModel';
-
+import { _Center } from "../globalStyles";
 
 const ShowLocalColeta = () => {
   const [localColeta, setLocalColeta] = useState<LocalColetaModel>();
@@ -39,8 +39,9 @@ const ShowLocalColeta = () => {
   }
 
   return (
-    <>
-      <Table>
+    <_Center>
+      <h5>Local de Coleta - detalhes:</h5>
+      <Table bordered>
         <tbody>
           <tr>
             <th>Id:</th>
@@ -91,7 +92,7 @@ const ShowLocalColeta = () => {
         </Col>
       
       </Row>      
-    </>
+    </_Center>
 
   );
 

@@ -5,6 +5,7 @@ import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
 import { DistribuicaoModel } from '../../hooks/DistribuicaoModel';
+import { _Center } from "../globalStyles";
 
 const ShowDistribuicao = () => {
   const [distribuicao, setDistribuicao ] = useState<DistribuicaoModel>();
@@ -36,8 +37,9 @@ const ShowDistribuicao = () => {
   }
 
   return (
-    <>
-      <Table responsive>
+    <_Center>
+      <h4> Distribuição - detalhes: </h4>
+      <Table responsive bordered>
         <tbody>
           <tr>
             <th>Id:</th>
@@ -70,7 +72,7 @@ const ShowDistribuicao = () => {
           </Button>              
         </Col>              
       </Row>   
-    </>
+    </_Center>
   );
 
 }

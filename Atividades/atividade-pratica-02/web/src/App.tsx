@@ -1,29 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-const _Center = styled.div`
-  text-align: center;
-
-`;
+import { Button, Card } from 'react-bootstrap';
+import { _Center, _Link } from './components/globalStyles';
 
 // Home Page
 function App() {
   return (
     <_Center>
-      <h2> Operações - Atividade 2 </h2>
-      <ul>
-        <li><Link to="/doacoes"> Doações </Link></li>
-        <li><Link to="/locais_coleta"> Locais Coleta </Link></li>
-        <li><Link to="/pessoas"> Pessoas </Link></li>
-
-        {/* PROVA */}
-        <li><Link to="/produtos"> Produtos </Link></li>
-        <li><Link to="/unidades"> Unidades </Link></li>
-        <li><Link to="/distribuicoes"> Distribuicoes </Link></li>
-      </ul>
+      <Card body>
+        <h4> Atividade 2 </h4>
+        <_Link to="/doacoes"> <Button variant="secondary"> Doações </Button> </_Link>
+        <_Link to="/locais_coleta"> <Button variant="secondary"> Locais Coleta </Button> </_Link>
+        <_Link to="/pessoas"> <Button variant="secondary"> Pessoas </Button> </_Link>
+      </Card>
+    
+      {/* PROVA */}
+      <Card body>
+        <h4> Prova </h4>      
+        <_Link to="/produtos"> <Button variant="secondary"> Produtos </Button> </_Link>
+        <_Link to="/unidades"> <Button variant="secondary"> Unidades </Button> </_Link>
+        <_Link to="/distribuicoes"> <Button variant="secondary"> Distribuições </Button> </_Link>
+      </Card>    
     </_Center>
   );
 }

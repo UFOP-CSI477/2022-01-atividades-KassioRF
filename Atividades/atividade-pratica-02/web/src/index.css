@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   border: 0;
+  height: auto;
+  /* min-height: 100%;
+  height: auto; */
   /* font-size: 100%;  */
 }
 

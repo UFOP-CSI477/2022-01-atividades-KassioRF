@@ -9,9 +9,9 @@ import _Spinner from '../utils/spinner';
 import FormGroupEndereco from "../widgets/FormEndereco";
 import { LocalColetaModel } from "../../hooks/LocalColetaModel";
 import { useNavigate, useParams } from "react-router-dom";
+import { _Center } from "../globalStyles";
 
 const EditLocalColeta = () => {
-
 
   const navigate = useNavigate();
   const [loading, setLoading ] = useState(false); // Controla a exibição do Spinnner
@@ -87,7 +87,8 @@ const EditLocalColeta = () => {
   }
 
   return (
-    <div>
+    <_Center>
+      <h5>Atualizar local de coleta</h5>      
       <Form onSubmit={handleUpdateLocalColeta}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="firsName">
@@ -115,20 +116,29 @@ const EditLocalColeta = () => {
           estadoSelected={estadoId}  
         />  
 
-        <Button variant="primary" onClick={(_) => navigate('/locais_coleta')}>
-          Voltar
-        </Button>
-        { loading ?
-          <_Spinner /> :
-          <Button variant="primary" type="submit">
-            Cadastrar
-          </Button>
-        }
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>
+            <Button variant="primary" onClick={(_) => navigate('/locais_coleta')}>
+              Voltar
+            </Button>
+          </Col>
+
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Atualizar
+              </Button>
+            }                   
+          </Col>
+        </Row>  
+
+        
 
       </Form>
   
   
-    </div>
+    </_Center>
   );  
 
 }

@@ -5,6 +5,7 @@ import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
 import { ProdutoModel } from '../../hooks/ProdutoModel';
+import { _Center } from "../globalStyles";
 
 const ShowProduto = () => {
   const [produto, setProduto ] = useState<ProdutoModel>();
@@ -36,8 +37,9 @@ const ShowProduto = () => {
   }
 
   return (
-    <>
-      <Table responsive>
+    <_Center>
+      <h4> Produto - detalhes: </h4>
+      <Table responsive bordered>
         <tbody>
           <tr>
             <th>[Id] Etiqueta:</th>
@@ -75,7 +77,7 @@ const ShowProduto = () => {
         </Col>        
 
       </Row>   
-    </>
+    </_Center>
   );
 
 }

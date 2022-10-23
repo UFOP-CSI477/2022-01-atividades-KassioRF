@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import _Spinner from '../utils/spinner';
-
+import { _Center } from "../globalStyles";
 // select auto complete
 import Select from 'react-select'
 
@@ -77,31 +77,31 @@ const CreateProduto = () => {
   }
   
   return (
-    <>
+    <_Center>
       <p>Create produto</p>
       
-      <Col md={6}>
-        <Form.Label>Local de coleta:</Form.Label>
-        <Form.Control 
-              name="etiqueta" 
-              value={etiqueta}
-              onChange={e => setEtiqueta(e.target.value)}
-              required
-              placeholder="etiqueta" />
-
-      </Col>
       <Form onSubmit={handleCreateProduto}>
-        <Col md={6}>
+        <Col>
+          <Form.Label>Etiqueta:</Form.Label>
+          <Form.Control 
+                name="etiqueta" 
+                value={etiqueta}
+                onChange={e => setEtiqueta(e.target.value)}
+                required
+                placeholder="etiqueta" />
+
+        </Col>
+        <Col>
         <Form.Label>Doacao:</Form.Label>
           <Select 
             isClearable={true}
             options={getDoacoesOptionSelect()}
-            placeholder="Doador"
+            placeholder="Doação"
             onChange={e => e ? setDoacaoId(parseInt(e?.value)) : setDoacaoId(0)} 
           />        
         </Col>
         
-        <Col md={6}>
+        <Col>
           <Form.Label>Validade:</Form.Label>
           <div></div>
           <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={`pt-br`}>
@@ -116,20 +116,27 @@ const CreateProduto = () => {
           </LocalizationProvider>        
         </Col>
 
-
-
-        <Button variant="primary" onClick={(_) => navigate('/produtos')}>
-            Voltar
-          </Button>
-          { loading ?
-            <_Spinner /> :
-            <Button variant="primary" type="submit">
-              Cadastrar
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>
+            <Button variant="primary" onClick={(_) => navigate('/produtos')}>
+              Voltar
             </Button>
-          }
+          </Col>
+
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Cadastrar
+              </Button>
+            }                 
+          </Col>
+        </Row>  
+
+
       </Form> 
         
-    </>
+    </_Center>
   );
 
 }

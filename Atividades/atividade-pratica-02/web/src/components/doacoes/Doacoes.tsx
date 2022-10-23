@@ -1,23 +1,26 @@
 import ListDoacoes from "./ListDoacoes";
-import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 import { useNavigate} from "react-router-dom";
+import { _Center } from "../globalStyles";
+import { Button, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Doacoes = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <_Center>
       <div>
         <h3>Doações:</h3>
-      <Link to="/doacoes/cadastrar"> Cadastrar </Link>
-      <ListDoacoes />
       </div>
-      <Button variant="primary" onClick={(_) => navigate('/')}>
-        Voltar
-      </Button>                
-    </>
-
-
+      <div>
+        <Link to="/doacoes/cadastrar"> Cadastrar </Link>
+        <ListDoacoes />
+      </div>
+      <Col md={3}>
+        <Button variant="secondary" onClick={(_) => navigate('/')}>
+          Voltar
+        </Button>                      
+      </Col>
+    </_Center>
   );
 }
 

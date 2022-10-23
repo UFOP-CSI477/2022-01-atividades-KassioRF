@@ -8,6 +8,7 @@ import Row from 'react-bootstrap/Row';
 import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
 import _Spinner from '../utils/spinner';
 import FormGroupEndereco from "../widgets/FormEndereco";
+import { _Center } from "../globalStyles";
 
 const CreateUnidade = () => {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ const CreateUnidade = () => {
   }
 
   return (
-    <div>
+    <_Center>
       <Form onSubmit={handleCreateUnidade}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="firsName">
@@ -82,22 +83,27 @@ const CreateUnidade = () => {
           setNumero={setNumero}
           setComplemento={setComplemento}
           setCidadeId={setCidadeId}  
-        />  
+        />
 
-        <Button variant="primary" onClick={(_) => navigate('/locais_coleta')}>
-          Voltar
-        </Button>
-        { loading ?
-          <_Spinner /> :
-          <Button variant="primary" type="submit">
-            Cadastrar
-          </Button>
-        }
+        <Row style={{paddingTop: '2rem'}}>
+          <Col md={6}>
+            <Button variant="primary" onClick={(_) => navigate('/locais_coleta')}>
+              Voltar
+            </Button>
+          </Col>
 
+          <Col md={6}>
+            { loading ?
+              <_Spinner /> :
+              <Button variant="primary" type="submit">
+                Cadastrar
+              </Button>
+            }          
+          </Col>
+        </Row>
       </Form>
-  
-  
-    </div>
+
+    </_Center>
   );  
   
 }

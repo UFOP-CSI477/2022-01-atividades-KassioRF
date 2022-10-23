@@ -38,7 +38,7 @@ const ListLocaisColeta = () => {
         // Se tudo está ok exibe os dados carregados
         locaisColeta.length == 0 ?
           <> Sem dados carregados </> :        
-          <Table responsive>
+          <Table responsive bordered>
             <thead>
               <tr>
                 <th>Id</th>

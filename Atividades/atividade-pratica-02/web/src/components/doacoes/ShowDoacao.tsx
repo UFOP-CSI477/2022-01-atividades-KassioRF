@@ -5,6 +5,7 @@ import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
 import { DoacaoModel } from '../../hooks/DoacaoModel';
+import { _Center } from "../globalStyles";
 
 const ShowDoacao = () => {
   const [doacao, setDoacao ] = useState<DoacaoModel>();
@@ -36,8 +37,9 @@ const ShowDoacao = () => {
   }
 
   return (
-    <>
-      <Table responsive>
+    <_Center>
+      <h5>Doação - detalhes:</h5>
+      <Table responsive bordered>
         <tbody>
           <tr>
             <th>Id:</th>
@@ -47,8 +49,12 @@ const ShowDoacao = () => {
           <tr>
             <th>tipo sang.:</th>
             <td>{doacao?.pessoa.tipo.tipo}{doacao?.pessoa.tipo.fator}</td>
-          {/* pessoa id */}
           </tr>
+          <tr>
+            <th>Data:</th>
+            <td>{formatDate(doacao?.date)}</td>
+          </tr>
+          {/* pessoa id */}
           <tr>
             <th>Pessoa:</th>
             <td>[{doacao?.pessoa.id}] {doacao?.pessoa.nome} | {doacao?.pessoa.documento} </td>
@@ -75,11 +81,6 @@ const ShowDoacao = () => {
             Voltar
           </Button>              
         </Col>        
-        {/* <Col md="auto">
-          <Button variant="warning" onClick={(_) => navigate('/doacoes')}>
-            Atualizar
-          </Button>        
-        </Col>         */}
         <Col md="auto">
           <Button variant="danger" onClick={(_) => handleDeleteDoacao()}>
             Excluir
@@ -87,7 +88,7 @@ const ShowDoacao = () => {
         </Col>
       
       </Row>   
-    </>
+    </_Center>
   );
 
 }

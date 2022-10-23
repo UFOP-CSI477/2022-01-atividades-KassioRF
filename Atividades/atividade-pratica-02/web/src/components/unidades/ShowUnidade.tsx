@@ -5,6 +5,7 @@ import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
 import { UnidadeModel } from '../../hooks/UnidadeModel';
+import { _Center } from "../globalStyles";
 
 const ShowUnidade = () => {
   const [unidade, setUnidade ] = useState<UnidadeModel>();
@@ -23,8 +24,9 @@ const ShowUnidade = () => {
   }, [id]);
 
   return (
-    <>
-      <Table responsive>
+    <_Center>
+      <h4> Unidade - detalhes: </h4>
+      <Table responsive bordered>
         <tbody>
           <tr>
             <th>[Id]</th>
@@ -55,7 +57,7 @@ const ShowUnidade = () => {
         </tbody>
       </Table>
       <h4>Distribuicoes</h4>
-      <Table responsive>
+      <Table responsive bordered>
           <thead>
             <tr>
               <th>Id</th>            
@@ -83,7 +85,7 @@ const ShowUnidade = () => {
         </Col>        
 
       </Row>   
-    </>
+    </_Center>
   );
 
 }
