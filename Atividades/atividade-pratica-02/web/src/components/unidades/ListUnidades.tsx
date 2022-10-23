@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { UnidadeModel } from '../../hooks/UnidadeModel';
+import { UnidadeModel } from '../../models/UnidadeModel';
 import api from '../../services/api';
 import { formatDate } from '../utils/formatDate';
 import _Spinner from '../utils/spinner';

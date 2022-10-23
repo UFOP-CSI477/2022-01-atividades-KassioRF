@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LocalColetaModel } from '../../hooks/LocalColetaModel';
+import { LocalColetaModel } from '../../models/LocalColetaModel';
 import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 import { Link } from 'react-router-dom';

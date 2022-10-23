@@ -7,8 +7,8 @@
  */
 
 import { prismaClient } from '../src/database/client';
-import { TIPOS, FATOR } from '../src/hooks/Constants';
-import { TipoSanguineoModel } from '../src/hooks/TipoSanguineoModel';
+import { TIPOS, FATOR } from '../src/models/Constants';
+import { TipoSanguineoModel } from '../src/models/TipoSanguineoModel';
 
 const _tiposSanguineos: Array<TipoSanguineoModel> = [
   // A+

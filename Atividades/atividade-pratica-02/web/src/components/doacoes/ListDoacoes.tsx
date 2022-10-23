@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { DoacaoModel } from '../../hooks/DoacaoModel';
+import { DoacaoModel } from '../../models/DoacaoModel';
 import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 

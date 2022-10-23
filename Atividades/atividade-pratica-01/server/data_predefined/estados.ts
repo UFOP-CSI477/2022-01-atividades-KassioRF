@@ -6,7 +6,7 @@
  */
 
 import { prismaClient } from "../src/database/client";
-import { EstadoModel } from "../src/hooks/EnderecoModel";
+import { EstadoModel } from "../src/models/EnderecoModel";
 import axios from "axios";
 
 // EndPoint api

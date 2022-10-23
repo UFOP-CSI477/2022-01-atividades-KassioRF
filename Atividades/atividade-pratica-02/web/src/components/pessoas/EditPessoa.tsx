@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { PessoaModel } from '../../hooks/PessoaModel';
 import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,8 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import FormGroupEndereco from "../widgets/FormEndereco";
-import { CidadeModel, EstadoModel } from '../../hooks/EnderecoModel';
-import { TipoSanguineoModel } from '../../hooks/TipoSanguineoModel';
+import { PessoaModel } from '../../models/PessoaModel';
+import { CidadeModel, EstadoModel } from '../../models/EnderecoModel';
+import { TipoSanguineoModel } from '../../models/TipoSanguineoModel';
 import { _Center } from "../globalStyles";
 
 const EditPessoa = () => {

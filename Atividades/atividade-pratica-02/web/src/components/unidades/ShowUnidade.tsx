@@ -4,7 +4,7 @@ import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
-import { UnidadeModel } from '../../hooks/UnidadeModel';
+import { UnidadeModel } from '../../models/UnidadeModel';
 import { _Center } from "../globalStyles";
 
 const ShowUnidade = () => {

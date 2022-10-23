@@ -4,7 +4,7 @@ import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
-import { ProdutoModel } from '../../hooks/ProdutoModel';
+import { ProdutoModel } from '../../models/ProdutoModel';
 import { _Center } from "../globalStyles";
 
 const ShowProduto = () => {

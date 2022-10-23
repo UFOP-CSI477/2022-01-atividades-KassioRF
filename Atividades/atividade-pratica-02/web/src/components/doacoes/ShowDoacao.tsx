@@ -4,7 +4,7 @@ import api from '../../services/api';
 import _Spinner from '../utils/spinner';
 import { Button, Col, Row, Table } from 'react-bootstrap';
 import { formatDate } from '../utils/formatDate';
-import { DoacaoModel } from '../../hooks/DoacaoModel';
+import { DoacaoModel } from '../../models/DoacaoModel';
 import { _Center } from "../globalStyles";
 
 const ShowDoacao = () => {

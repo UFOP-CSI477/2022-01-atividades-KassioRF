@@ -6,7 +6,7 @@
 */
 
 import { prismaClient } from "../src/database/client";
-import { EstadoModel, CidadeModel } from "../src/hooks/EnderecoModel";
+import { EstadoModel, CidadeModel } from "../src/models/EnderecoModel";
 import axios from "axios";
 import { prisma, Prisma } from "@prisma/client";
 

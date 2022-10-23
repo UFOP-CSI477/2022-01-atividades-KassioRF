@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { PessoaModel } from '../../hooks/PessoaModel';
+import { PessoaModel } from '../../models/PessoaModel';
 import { useNavigate, useParams } from "react-router-dom";
 import api from '../../services/api';
 import _Spinner from '../utils/spinner';

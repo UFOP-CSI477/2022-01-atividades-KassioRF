@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react"
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
+import { CidadeModel, EstadoModel } from "../../models/EnderecoModel";
 
 
 // Fonte utilizada para criar componentes com gerenciadores de estado como propriedades

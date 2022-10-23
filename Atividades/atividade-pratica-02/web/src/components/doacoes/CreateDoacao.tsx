@@ -6,8 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import _Spinner from '../utils/spinner';
-import { PessoaModel } from "../../hooks/PessoaModel";
-import { LocalColetaModel } from "../../hooks/LocalColetaModel";
+import { PessoaModel } from "../../models/PessoaModel";
+import { LocalColetaModel } from "../../models/LocalColetaModel";
 import { _Center } from "../globalStyles";
 //import FormGroupEndereco from "../widgets/FormEndereco";
 

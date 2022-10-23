@@ -5,10 +5,9 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
 import _Spinner from '../utils/spinner';
-import { UnidadeModel } from "../../hooks/UnidadeModel";
-import { ProdutoModel } from "../../hooks/ProdutoModel";
+import { UnidadeModel } from "../../models/UnidadeModel";
+import { ProdutoModel } from "../../models/ProdutoModel";
 import { formatDate } from "../utils/formatDate";
 import { _Center } from "../globalStyles";
 // select auto complete

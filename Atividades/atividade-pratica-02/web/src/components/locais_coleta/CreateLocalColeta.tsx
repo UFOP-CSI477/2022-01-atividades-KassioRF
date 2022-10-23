@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
+import { CidadeModel, EstadoModel } from "../../models/EnderecoModel";
 import _Spinner from '../utils/spinner';
 import FormGroupEndereco from "../widgets/FormEndereco";
 import { _Center } from "../globalStyles";

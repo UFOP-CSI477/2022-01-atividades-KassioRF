@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import { CidadeModel, EstadoModel } from "../../hooks/EnderecoModel";
 import _Spinner from '../utils/spinner';
 import FormGroupEndereco from "../widgets/FormEndereco";
-import { LocalColetaModel } from "../../hooks/LocalColetaModel";
+import { CidadeModel, EstadoModel } from "../../models/EnderecoModel";
+import { LocalColetaModel } from "../../models/LocalColetaModel";
 import { useNavigate, useParams } from "react-router-dom";
 import { _Center } from "../globalStyles";
 
