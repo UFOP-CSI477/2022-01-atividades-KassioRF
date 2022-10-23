@@ -25,7 +25,14 @@ export class GetByIdProduto {
             pessoa: {
               select: {
                 id: true,
-                documento: true
+                nome: true,
+                documento: true,
+                tipo: {
+                  select: {
+                    fator: true,
+                    tipo: true,
+                  }
+                }
               }
             }
           }

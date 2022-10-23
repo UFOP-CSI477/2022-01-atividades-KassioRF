@@ -19,7 +19,14 @@ export class GetAllProduto {
             pessoa: {
               select: {
                 id: true,
-                documento: true
+                nome: true,
+                documento: true,
+                tipo: {
+                  select: {
+                    tipo: true,
+                    fator: true,
+                  }
+                }
               }
             }
           }

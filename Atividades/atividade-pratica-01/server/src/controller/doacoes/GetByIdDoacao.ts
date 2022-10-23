@@ -11,6 +11,7 @@ export class GetByIdDoacao {
       },
       select: {
         id: true,
+        date: true,
         pessoa: {
           select: {
             id: true,

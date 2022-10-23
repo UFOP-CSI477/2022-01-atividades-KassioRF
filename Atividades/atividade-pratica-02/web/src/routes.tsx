@@ -12,6 +12,15 @@ import ShowDoacao from "./components/doacoes/ShowDoacao";
 import CreateDoacao from "./components/doacoes/CreateDoacao";
 import EditPessoa from "./components/pessoas/EditPessoa";
 import EditLocalColeta from "./components/locais_coleta/EditLocalColeta";
+import Produtos from "./components/produtos/Produtos";
+import ShowProduto from "./components/produtos/ShowProduto";
+import Unidades from "./components/unidades/Unidades";
+import ShowUnidade from "./components/unidades/ShowUnidade";
+import Distribuicao from "./components/distribuicoes/Distribuicao";
+import ShowDistribuicao from "./components/distribuicoes/ShowDistribuicao";
+import CreateProduto from "./components/produtos/CreateProduto";
+import CreateUnidade from "./components/unidades/CreateUnidade";
+import CreateDistribuicao from "./components/distribuicoes/CreateDistribuicao";
 
 
 const AppRoutes = () => {
@@ -34,6 +43,20 @@ const AppRoutes = () => {
         <Route path="/pessoas/cadastrar" element= {<CreatePessoa />} />
         <Route path="/pessoas/:id" element={<ShowPessoa />} />       
         <Route path="/pessoas/atualizar/:id" element={<EditPessoa />} />
+
+        {/* PROVA */}
+        <Route path="/produtos" element={ <Produtos /> } />
+        <Route path="/produtos/cadastrar" element= {<CreateProduto />} />
+        <Route path="/produtos/:id" element={<ShowProduto />} />
+
+        <Route path="/unidades" element={ <Unidades /> } />
+        <Route path="/unidades/cadastrar" element= {<CreateUnidade />} />
+        <Route path="/unidades/:id" element={ <ShowUnidade /> } />
+
+        <Route path="/distribuicoes" element={ <Distribuicao /> } />
+        <Route path="/distribuicoes/cadastrar" element= {<CreateDistribuicao />} />
+        <Route path="/distribuicoes/:id" element={ <ShowDistribuicao /> } />
+
       </Routes>      
     </BrowserRouter>
   );

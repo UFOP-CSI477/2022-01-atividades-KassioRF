@@ -8,6 +8,34 @@ export class GetAllUnidade {
       select: {
         id: true,
         nome: true,
+        distribuicao: {
+          orderBy: {
+            created_at: 'asc'
+          },
+          select: {
+            id: true,
+            produto: {
+              select: {
+                id: true,
+                etiqueta: true,
+                doacao: {
+                  select: {
+                    pessoa:{
+                      select: {
+                        tipo: {
+                          select: {
+                            tipo: true,
+                            fator: true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
         endereco: {
           select: {
             rua: true,

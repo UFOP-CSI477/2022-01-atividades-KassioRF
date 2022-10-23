@@ -14,6 +14,20 @@ export class GetAllDistribuicao {
             id: true,
             etiqueta: true,
             validade: true,
+            doacao: {
+              select: {
+                pessoa: {
+                  select: {
+                    tipo: {
+                      select: {
+                        tipo: true,
+                        fator: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
 
           }          
         },

@@ -18,6 +18,11 @@ function App() {
         <li><Link to="/doacoes"> Doações </Link></li>
         <li><Link to="/locais_coleta"> Locais Coleta </Link></li>
         <li><Link to="/pessoas"> Pessoas </Link></li>
+
+        {/* PROVA */}
+        <li><Link to="/produtos"> Produtos </Link></li>
+        <li><Link to="/unidades"> Unidades </Link></li>
+        <li><Link to="/distribuicoes"> Distribuicoes </Link></li>
       </ul>
     </_Center>
   );

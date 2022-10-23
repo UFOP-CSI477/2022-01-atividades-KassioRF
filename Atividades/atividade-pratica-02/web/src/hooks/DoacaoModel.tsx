@@ -7,7 +7,7 @@ export interface DoacaoModel {
   id?: number;
   pessoa: PessoaModel;
   local: LocalColetaModel;
-  data: string;
+  date: string;
   created_at?: string;
   updated_at?: string;
 
