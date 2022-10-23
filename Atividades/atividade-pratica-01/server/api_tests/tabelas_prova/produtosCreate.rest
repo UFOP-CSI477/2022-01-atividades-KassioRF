@@ -1,0 +1,29 @@
+###
+POST http://localhost:4000/produto
+Content-Type: application/json
+
+{
+  "etiqueta": "Produto 1",
+  "doacao_id": "1",
+  "validade": "20/09/2022"
+}
+
+###
+POST http://localhost:4000/produto
+Content-Type: application/json
+
+{
+  "etiqueta": "Produto 2",
+  "doacao_id": "2",
+  "validade": "20/09/2022"
+}
+
+###
+POST http://localhost:4000/produto
+Content-Type: application/json
+
+{
+  "etiqueta": "Produto 3",
+  "doacao_id": "3",
+  "validade": "20/09/2022"
+}

@@ -1,0 +1,40 @@
+### Ipatinga: 5070
+### JM: 5127
+### Itabira: 5077
+### BH: 4780
+
+### Create Local Coleta
+POST http://localhost:4000/unidade
+Content-Type: application/json
+
+{
+  "nome": "Local00",
+  "rua": "rua teste",
+  "numero": "00",
+  "complemento": "teste complemento",
+  "cidade_id": "5070"
+}
+
+###
+POST http://localhost:4000/unidade
+Content-Type: application/json
+
+{
+  "nome": "Local01",
+  "rua": "rua teste",
+  "numero": "01",
+  "complemento": "teste complemento",
+  "cidade_id": "4780"
+}
+
+###
+POST http://localhost:4000/unidade
+Content-Type: application/json
+
+{
+  "nome": "Local02",
+  "rua": "rua teste",
+  "numero": "02",
+  "complemento": "teste complemento",
+  "cidade_id": "5077"
+}

@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "produtos" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "etiqueta" TEXT NOT NULL,
+    "doacao_id" INTEGER NOT NULL,
+    "validade" DATETIME NOT NULL,
+    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "produtos_doacao_id_fkey" FOREIGN KEY ("doacao_id") REFERENCES "doacoes" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

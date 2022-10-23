@@ -7,6 +7,9 @@ import { estadosRouter } from './routes/estados'
 import { cidadesRouter } from './routes/cidades';
 import { localColetaRouter } from './routes/locaisColeta';
 import { doacoesRouter } from './routes/doacoes';
+import { produtosRouter } from './routes/produto';
+import { unidadesRouter } from './routes/unidades';
+import { distribuicoesRouter } from './routes/distribuicoes';
 
 // setup do server
 const PORT = 4000;
@@ -23,6 +26,10 @@ app.use(estadosRouter);
 app.use(cidadesRouter);
 app.use(localColetaRouter);
 app.use(doacoesRouter);
+// rotas - PROVA
+app.use(produtosRouter);
+app.use(unidadesRouter);
+app.use(distribuicoesRouter);
 // build server
 app.listen(PORT, () => {
   console.log(`[SERVER] Server is running on port ${PORT}`);

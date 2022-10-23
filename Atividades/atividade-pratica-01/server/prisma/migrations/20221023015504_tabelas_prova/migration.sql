@@ -1,0 +1,9 @@
+-- CreateTable
+CREATE TABLE "unidades" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "nome" TEXT NOT NULL,
+    "endereco_id" INTEGER NOT NULL,
+    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "unidades_endereco_id_fkey" FOREIGN KEY ("endereco_id") REFERENCES "Endereco" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

@@ -75,6 +75,8 @@ model Doacao {
   pessoa            Pessoa @relation(fields: [pessoa_id], references: [id])
   local             LocalColeta @relation(fields: [local_id], references: [id])
 
+  produto          Produto[]
+
   created_at        DateTime @default(now())
   updated_at        DateTime @default(now())  
 
@@ -93,6 +95,7 @@ model Endereco {
 
   localColeta       LocalColeta[]
   pessoa            Pessoa[]
+  unidade           Unidade[]
 
 }
 
@@ -119,4 +122,54 @@ model Cidade {
   
   @@map("cidades")
 
+}
+
+
+// tabelas da prova
+model Produto {
+  id                Int    @id @default(autoincrement())
+  etiqueta          String
+  doacao_id         Int
+  doacao            Doacao @relation(fields: [doacao_id], references: [id])
+
+  distribuicao           Distribuicao[]
+
+  validade          DateTime
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+
+  @@map("produtos")
+
+}
+
+model Unidade {
+  id                Int    @id @default(autoincrement())
+  nome              String
+  endereco_id       Int
+  endereco          Endereco @relation(fields: [endereco_id], references: [id])
+
+  distribuicao      Distribuicao[]
+
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+
+  @@map("unidades")
+
+}
+
+model Distribuicao {
+  id                Int    @id @default(autoincrement())
+  date              DateTime
+
+
+  produto_id       Int
+  produto          Produto @relation(fields: [produto_id], references: [id])
+
+  unidade_id       Int
+  unidade          Unidade @relation(fields: [unidade_id], references: [id])
+
+
+  created_at        DateTime @default(now())
+  updated_at        DateTime @default(now())  
+  @@map("distribuicoes")
 }
