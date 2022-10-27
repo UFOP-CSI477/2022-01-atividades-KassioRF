@@ -31,11 +31,11 @@
 Ao decorrer do desenvolvimento do trabalho notei que, por ser uma plataforma multiusuário, não seria interessante lidar com questões de faturamento.
 
 
-### 4. Principais desafios e dificuldades
+### 3. Principais desafios e dificuldades
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
 A princípio ouve um uma dificuldade para tratar o upload de imagens via formulário. Porém após algum tempo de pesquisa foi possível encontrar uma solução viável.
 
-### 5. Instruções para instalação e execução
+### 4. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
 
 O backend da aplicação foi desenvolvido em conjunto com alguns serviços do [FireBase](https://firebase.google.com/) e por tanto as dependências necessárias já estão registradas no package.json do aplicação. Como os serviços utilizados (Banco de dados e autenticação) permanecem hospedados no servidor do Firebase não é necessário inicialização prévia. Basta apenas executar o [projeto](./projeto/app/) que foi desenvolvido com ReactTs.
@@ -45,7 +45,7 @@ Para instalar as depêndencias do projeto é necessário executar o comando ``np
 Obs: É necessário utilizar o ``--force`` devido alguns conflitos das depências do MaterialUi (utilizado para construir alguns componentes visuais).
 
 
-### 6. Referências
+### 5. Referências
 <!-- Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT. -->
 
  - https://firebase.google.com/docs/ Documentação do Firebase 
