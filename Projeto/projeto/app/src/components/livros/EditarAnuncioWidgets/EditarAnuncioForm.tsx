@@ -259,7 +259,7 @@ const CadastrarLivro = (props: EditAnuncioProps ) => {
               </Col>
               <Col md={4}>
                 <Button variant="primary" type="submit">
-                  Cadastrar
+                  Atualizar
                 </Button>          
               </Col>              
             </Row>        

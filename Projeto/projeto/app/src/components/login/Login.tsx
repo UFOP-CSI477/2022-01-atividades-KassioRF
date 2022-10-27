@@ -23,12 +23,12 @@ import { getAuth, setPersistence, signInWithEmailAndPassword, browserLocalPersis
 function Copyright(props: any) {  
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
+      {''}
       <MuiLink href="https://github.com/KassioRF" target="_blank">
-        Your Website
+        
       </MuiLink>{' '}
-      {new Date().getFullYear()}
-      {'.'}
+      {''}
+      {''}
     </Typography>
   );
 }

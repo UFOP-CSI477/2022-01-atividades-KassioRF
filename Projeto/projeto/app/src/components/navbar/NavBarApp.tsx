@@ -63,7 +63,7 @@ const NavBarApp = () => {
                 <NavDropdown.Item onClick={() => handleLogOut()}> Logout </NavDropdown.Item>            
               </_DropDown>          
             : 
-              <_DropDown title={<AccountCircleIcon />} id="collasible-nav-dropdown">
+              <_DropDown title="Entrar" id="collasible-nav-dropdown">
 
                 <NavDropdown.Item as={ Link } to="/login"> Login </NavDropdown.Item>
                 <NavDropdown.Item as={ Link } to="/cadastro"> Cadastre-se </NavDropdown.Item>
