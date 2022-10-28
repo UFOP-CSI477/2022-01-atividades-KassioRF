@@ -33,7 +33,7 @@ Ao decorrer do desenvolvimento do trabalho notei que, por ser uma plataforma mul
 
 ### 4. Principais desafios e dificuldades
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
-A princípio ouve um uma dificuldade para tratar o upload de imagens via formulário. Porém após algum tempo de pesquisa foi possível encontrar uma solução viável.
+A princípio houve um uma dificuldade para tratar o upload de imagens via formulário. Porém após algum tempo de pesquisa foi possível encontrar uma solução viável.
 
 ### 5. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
